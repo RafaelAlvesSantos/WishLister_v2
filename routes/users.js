@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const User = require("..models/User");
-const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
@@ -21,6 +20,8 @@ router.post("/register", async (req, res) => {
     user.password = await bcrypt.hash(password, salt);
     await user.save();
 
+    res.status(201).send(user);
+
     // stopped here, need to decide whether gonna session or jwt, probably sessions are superior
   } catch (error) {
     console.error(error.message);
@@ -29,3 +30,5 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", (req, res) => {});
+
+module.exports = router;
