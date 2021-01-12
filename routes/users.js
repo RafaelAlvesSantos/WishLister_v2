@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
       { expiresIn: 3600 },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({ token }).cookie("token", token, { httpOnly: true });
       }
     );
   } catch (error) {
