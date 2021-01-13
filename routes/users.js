@@ -25,7 +25,7 @@ router.post("/register", async (req, res) => {
 
     res.status(201).send(user);
 
-    // stopped here, need to decide whether gonna session or jwt, probably sessions are superior
+    // gonna use jwt, still unsure whether the user will be automatically logged in
   } catch (error) {
     console.error(error.message);
     res.status(500).send("Internal Server error");
