@@ -5,6 +5,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const authMid = require("../middleware/auth");
 
 // REGISTER USER
 router.post("/register", async (req, res) => {
@@ -62,6 +63,10 @@ router.post("/login", async (req, res) => {
     console.error(error.message);
     res.status(500).send("Internal Server Error");
   }
+});
+
+router.get("/dashboard", authMid, (req, res) => {
+  res.send({ msg: "You managed to get here" });
 });
 
 module.exports = router;

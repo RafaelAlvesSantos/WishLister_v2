@@ -1,0 +1,19 @@
+const jwt = require("jsonwebtoken");
+const config = require("config");
+
+// Middleware for protected routes
+module.exports = function (req, res, next) {
+  const token = req.header("x-auth-token");
+
+  if (!token)
+    return res.status(401).json({ msg: "No token found. Access Denied" });
+
+  try {
+    const decoded = jwt.verify(token, config.get("jwtSecret"));
+    req.user = decoded.user;
+    next();
+  } catch (error) {
+    console.error(error.message);
+    return res.status(400).json({ msg: "Token could not be validated" });
+  }
+};
