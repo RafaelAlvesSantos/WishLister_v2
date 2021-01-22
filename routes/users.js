@@ -53,8 +53,9 @@ router.post("/login", async (req, res) => {
       config.get("jwtSecret"),
       { expiresIn: 3600 },
       (err, token) => {
+        console.log(token);
         if (err) throw err;
-        res.json({ token }).cookie("token", token, { httpOnly: true });
+        res.json({ token });
       }
     );
   } catch (error) {
