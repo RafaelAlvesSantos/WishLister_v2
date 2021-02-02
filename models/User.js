@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  wishlist: [],
 });
 
 module.exports = mongoose.model("user", userSchema);
