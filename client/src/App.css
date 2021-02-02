@@ -1,0 +1,195 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Start */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  background-color: #ebeeef;
+}
+
+.navbar-top {
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.navbar {
+  color: #fff;
+  background-color: #4d636f !important;
+  text-align: left !important;
+  font-size: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar-main {
+  white-space: normal;
+  width: auto;
+  float: left;
+  border: none;
+  display: block;
+  outline: 0;
+  color: #fff;
+  background-color: #3a4b53;
+  padding: 12px 24px !important;
+  user-select: none;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar-main:hover {
+  background-color: #cccccc;
+}
+
+.margin-right {
+  margin-right: 16px !important;
+}
+
+/* LOGIN FORM */
+
+.wrap-login {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 670px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-box-img {
+  background-image: url("https://colorlib.com/etc/lf/Login_v15/images/bg-01.jpg");
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 70px 15px 74px;
+}
+
+/* TRICK: place shading box on top of div */
+.login-box-img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(54, 84, 99, 0.7);
+}
+
+.login-box-img-1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  color: #fff;
+}
+
+.login-form {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 43px;
+  padding-bottom: 93px;
+  box-sizing: border-box;
+}
+/* used to be padding: 43px 88px 93px 190px; */
+
+.login-form-button-space {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 0px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.login-form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #57b846;
+  border-radius: 25px;
+  font-family: "Poppins";
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  transition: all 0.4s;
+}
+
+button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+
+button:hover {
+  background-color: lightslategray;
+  cursor: pointer;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
